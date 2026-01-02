@@ -1,0 +1,28 @@
+{
+	"name": "pl_validation_demo",
+	"properties": {
+		"activities": [
+			{
+				"name": "Validation_demo",
+				"type": "Validation",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "inputDataSet",
+						"type": "DatasetReference"
+					},
+					"timeout": "0.00:02:00",
+					"sleep": 10,
+					"minimumSize": 40000
+				}
+			}
+		],
+		"folder": {
+			"name": "adf-practice"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-12-31T03:08:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
