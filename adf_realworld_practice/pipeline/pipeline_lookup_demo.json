@@ -1,0 +1,74 @@
+{
+	"name": "pipeline_lookup_demo",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookup_demo",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.00:10:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ds_sqlserver_source",
+						"type": "DatasetReference",
+						"parameters": {
+							"sourcestableName": {
+								"value": "@pipeline().parameters.pipelinetableName",
+								"type": "Expression"
+							},
+							"sourceschemaName": {
+								"value": "@pipeline().parameters.pipelineschemaName",
+								"type": "Expression"
+							},
+							"sourceserverName": {
+								"value": "@pipeline().parameters.pipelineserverName",
+								"type": "Expression"
+							},
+							"sourcedbName": {
+								"value": "@pipeline().parameters.pipelinedbName",
+								"type": "Expression"
+							}
+						}
+					},
+					"firstRowOnly": false
+				}
+			}
+		],
+		"parameters": {
+			"pipelineserverName": {
+				"type": "string",
+				"defaultValue": "demo-database.database.windows.net"
+			},
+			"pipelinedbName": {
+				"type": "string",
+				"defaultValue": "demo-database"
+			},
+			"pipelineschemaName": {
+				"type": "string",
+				"defaultValue": "dbo"
+			},
+			"pipelinetableName": {
+				"type": "string",
+				"defaultValue": "students"
+			}
+		},
+		"folder": {
+			"name": "adf-practice"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-12-29T16:27:18Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

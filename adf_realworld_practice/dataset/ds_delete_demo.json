@@ -1,0 +1,19 @@
+{
+	"name": "ds_delete_demo",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "azure-practice-folder/8b49b0b8-5d01-4f76-aca0-87ffc21e1d28",
+				"fileSystem": "azure-practice-container"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

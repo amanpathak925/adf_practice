@@ -1,0 +1,9 @@
+{
+	"name": "adf-azure-practice07",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0ad56b83-1f90-4205-b726-fa3f7a9c9b9e",
+		"tenantId": "9159c698-6f2e-4c5f-a4f1-2903a4cc98d3"
+	}
+}

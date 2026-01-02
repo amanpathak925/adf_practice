@@ -1,0 +1,42 @@
+{
+	"name": "pl_dataflow_demo",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data flow demo",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.00:10:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "DataFlowRun",
+						"value": "JoinEmpDepData"
+					}
+				],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "dataflow_demo",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Coarse"
+				}
+			}
+		],
+		"folder": {
+			"name": "adf-practice"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-01-02T03:06:44Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
