@@ -1,0 +1,35 @@
+{
+	"name": "flowlet_demo",
+	"properties": {
+		"type": "Flowlet",
+		"typeProperties": {
+			"sources": [],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "aggregate1"
+				},
+				{
+					"name": "flowletinput"
+				},
+				{
+					"name": "flowetoutput"
+				}
+			],
+			"scriptLines": [
+				"input(output(",
+				"          DEPARTMENT_ID as string",
+				"     ),",
+				"     order: 0,",
+				"     allowSchemaDrift: true) ~> flowletinput",
+				"flowletinput aggregate(groupBy(DEPARTMENT_ID),",
+				"     COUNT = count(),",
+				"     partitionBy('hash', 1)) ~> aggregate1",
+				"aggregate1 output(mapColumn(",
+				"          DEPARTMENT_ID,",
+				"          COUNT",
+				"     )) ~> flowetoutput"
+			]
+		}
+	}
+}
