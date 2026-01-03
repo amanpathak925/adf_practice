@@ -76,6 +76,9 @@
 				"     partitionFileNames:['Flowletexample2.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          customer_state",
+				"     ),",
 				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
