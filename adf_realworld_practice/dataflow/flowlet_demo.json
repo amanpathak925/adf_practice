@@ -18,7 +18,8 @@
 			],
 			"scriptLines": [
 				"input(output(",
-				"          DEPARTMENT_ID as string",
+				"          DEPARTMENT_ID as string,",
+				"          customer_state as string",
 				"     ),",
 				"     order: 0,",
 				"     allowSchemaDrift: true) ~> flowletinput",
