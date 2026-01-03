@@ -69,7 +69,7 @@
 				"          customer_city as string,",
 				"          customer_state as string",
 				"     ),",
-				"     partitionFileNames:['Flowletexample.csv'],",
+				"     partitionFileNames:['Flowletexample2.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> sink1"
