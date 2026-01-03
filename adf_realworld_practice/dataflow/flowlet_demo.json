@@ -23,11 +23,13 @@
 				"     ),",
 				"     order: 0,",
 				"     allowSchemaDrift: true) ~> flowletinput",
-				"flowletinput aggregate(groupBy(DEPARTMENT_ID),",
+				"flowletinput aggregate(groupBy(DEPARTMENT_ID,",
+				"          customer_state),",
 				"     COUNT = count(),",
 				"     partitionBy('hash', 1)) ~> aggregate1",
 				"aggregate1 output(mapColumn(",
 				"          DEPARTMENT_ID,",
+				"          customer_state,",
 				"          COUNT",
 				"     )) ~> flowetoutput"
 			]
